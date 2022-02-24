@@ -1,5 +1,5 @@
 import processing.video.*;
-int w = 25;
+float w = 25;
 
 
 Capture cam;
@@ -17,15 +17,15 @@ void draw()
   if(cam.available()) 
   {
     cam.read(); 
-    cam.loadPixels();
+    cam.loadPixels(); 
   }
-  grid();
+  grid(); 
 }
 
 void grid()
 {
-  float mx = width/w;
-  float my = height/w;
+  float mx = float(width)/w;
+  float my = float(height)/w;
   float xrat = 640.0 / mx;
   float yrat = 480.0 / my;
   for(float y = 0; y < my; y++)
