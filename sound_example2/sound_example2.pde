@@ -1,9 +1,9 @@
 import processing.sound.*;
+
 Amplitude amp;
 AudioIn in;
 
-void setup() 
-{
+void setup() {
   size(640, 360);
   background(255);
     
@@ -16,10 +16,16 @@ void setup()
 
 void draw() 
 {
+  
   noStroke();
-  fill(color(0,0,0,10));
+  fill(color(255,255,255,10));
   rect(0,0,width,height);
-  fill(color(255,255,255));
-  circle(width/2,height/2,10+(amp.analyze()*1500.0));
-  //println(amp.analyze());
+  fill(color(0,0,0));
+  circle(width/2,height/2,amp.analyze()*500.0);
+}
+
+void mousePressed()
+{
+  fill(color(0,0,0));
+  circle(mouseX,mouseY,100);
 }
